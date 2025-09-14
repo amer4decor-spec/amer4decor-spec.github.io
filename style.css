@@ -236,11 +236,27 @@ footer{ margin-top:40px; padding:15px; text-align:center; color:#5b6b7b; font-si
   .slide{flex:0 0 100%}
 
   /* Hero */
-  .hero{ padding-top:20px; padding-bottom:60px; transform:translateY(0); }
+  .hero{
+    padding-top:20px;
+    padding-bottom:60px;
+    transform:translateY(0);
+  }
   .hero h2{font-size:23px; line-height:1.2;}
   .hero h3{font-size:18px;}
   .hero p{font-size:16px;}
-  .hero-media{border-radius:16px; aspect-ratio:16/9;}
+  .hero-media{
+    border-radius:16px;
+    aspect-ratio:16/9;
+  }
+
+  /* جعل الهيرو عمودي على الجوال والصورة تحت الإحصائيات */
+  .hero-grid{
+    display:flex;
+    flex-direction:column;
+  }
+  .hero-text{order:1;}
+  .hero-stats{order:2; margin-top:12px;}
+  .hero-media{order:3; width:100%; margin-top:20px;}
 
   /* عناصر عامة */
   .container{padding:0 12px}
@@ -252,7 +268,13 @@ footer{ margin-top:40px; padding:15px; text-align:center; color:#5b6b7b; font-si
   .section{padding:60px 12px}
 
   /* Mini services horizontal scroll */
-  .mini-services{display:flex; overflow-x:auto; gap:10px; padding-bottom:6px; scrollbar-width:none;}
+  .mini-services{
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    padding-bottom:6px;
+    scrollbar-width:none;
+  }
   .mini-services::-webkit-scrollbar{display:none;}
   .mini-service{min-width:120px; flex:0 0 auto;}
 }
