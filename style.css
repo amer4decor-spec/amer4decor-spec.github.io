@@ -503,4 +503,21 @@ footer{margin-top:40px; padding:15px; text-align:center; color:#5b6b7b; font-siz
   transition:opacity .2s ease;
 }
 .mini-btn:hover{opacity:.9;}
+@media(max-width:640px){
+  .mini-services{
+    display:flex;
+    overflow-x:auto;
+    gap:12px;
+    padding:6px 12px; /* padding يمين ويسار */
+    scrollbar-width:none; /* لإخفاء الشريط */
+    scroll-snap-type:x mandatory; /* تمرير سلس */
+  }
+  .mini-services::-webkit-scrollbar{display:none;}
+
+  .mini-service{
+    min-width:140px; /* عرض مناسب للكرت */
+    flex:0 0 auto;
+    scroll-snap-align:start; /* كل كرت يثبت عند بداية التمرير */
+  }
+}
 
