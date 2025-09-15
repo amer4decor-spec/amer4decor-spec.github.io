@@ -455,7 +455,7 @@ footer{margin-top:40px; padding:15px; text-align:center; color:#5b6b7b; font-siz
   .contact{grid-template-columns:1fr; gap:20px;}
   .gallery{grid-template-columns:repeat(2,1fr);}
   .slide{flex:0 0 100%;}
-  .hero h2{font-size:26px; line-height:1.2;}
+  .hero h2{font-size:21px; line-height:1.2;}
   .hero h3{font-size:18px;}
   .hero p{font-size:16px;}
   .hero-media{border-radius:16px; aspect-ratio:16/9;}
@@ -514,3 +514,4 @@ footer{margin-top:40px; padding:15px; text-align:center; color:#5b6b7b; font-siz
   .mini-services::-webkit-scrollbar{display:none;}
   .mini-service{min-width:120px; flex:0 0 auto;}
 }
+
