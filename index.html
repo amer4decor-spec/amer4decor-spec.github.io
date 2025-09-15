@@ -363,46 +363,23 @@
   },{threshold:.6});
   counters.forEach(el=>io2.observe(el));
 
-  // === Projects slider (responsive auto) ===
-const slider = document.getElementById('projSlider');
-const slides = Array.from(slider.children);
-let idx = 0, autoTimer;
-
-// يحسب كم صورة لازم تكون ظاهرة حسب حجم الشاشة
-function getVisible() {
-  return window.innerWidth < 768 ? 1 : 3; // موبايل = 1 ، ديسكتوب = 3
-}
-
-// عرض شريحة معيّنة
-function calcStep() { return slides[0].offsetWidth; }
-function go(to) {
-  const visible = getVisible();
-  idx = (to + slides.length) % (slides.length - (visible - 1));
-  slider.style.transform = `translateX(-${idx * calcStep()}px)`;
-}
-
-// تحريك يدوي
-function moveProjects(dir) {
-  stopAuto();
-  go(idx + dir);
+  // === Projects slider (3-up) ===
+  const slider = document.getElementById('projSlider');
+  const slides = Array.from(slider.children);
+  let idx = 0, autoTimer;
+  function calcStep(){ return slides[0].offsetWidth; }
+  function go(to){
+    const visible = 3; // عدد الظاهر على الديسكتوب
+    idx = (to + slides.length) % (slides.length - (visible - 1));
+    slider.style.transform = `translateX(-${idx * calcStep()}px)`;
+  }
+  function moveProjects(dir){ stopAuto(); go(idx + dir); startAuto(); }
+  function startAuto(){ autoTimer = setInterval(()=>go(idx+1), 4000); }
+  function stopAuto(){ clearInterval(autoTimer); }
   startAuto();
-}
-
-// تشغيل تلقائي
-function startAuto() {
-  autoTimer = setInterval(() => go(idx + 1), 3000); // كل 3 ثواني
-}
-function stopAuto() { clearInterval(autoTimer); }
-
-startAuto();
-
-// توقف عند المرور بالماوس
-slider.addEventListener('mouseenter', stopAuto);
-slider.addEventListener('mouseleave', startAuto);
-
-// إعادة حساب عند تغيير حجم الشاشة
-window.addEventListener('resize', () => go(idx));
-
+  slider.addEventListener('mouseenter', stopAuto);
+  slider.addEventListener('mouseleave', startAuto);
+  window.addEventListener('resize', ()=>go(idx));
 
   // === Lightbox ===
   const lb = document.getElementById('lightbox');
