@@ -6,6 +6,7 @@
   <title>المدونة | AMAR</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="logo.png">
+   <link rel="stylesheet" href="style.css">
 
   <style>
     :root {
@@ -70,13 +71,10 @@
       text-decoration: none;
       transition: color var(--transition);
     }
-    nav a.active,
-    nav a:hover {
-      color: #0aa86b;
-    }
+    
 
     footer {
-      margin-top: 50px;
+      margin-top: 63px;
       padding: 15px;
       text-align: center;
       color: #5b6b7b;
@@ -146,83 +144,18 @@
       margin: 0 0 16px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 700;
-      background: linear-gradient(135deg, #0aa86b, #078156);
-      color: #fff;
-      font-size: 14px;
-      transition: opacity .25s, transform .25s;
-    }
+    
     .btn:hover {
       opacity: .9;
       transform: translateY(-2px);
     }
 
-    /* Sidebar */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      right: -320px;
-      width: 320px;
-      height: 100vh;
-      background: linear-gradient(180deg, #0f3427, #0b1f17);
-      color: #ffffff;
-      z-index: 1200;
-      transition: right var(--transition);
-      padding: 22px;
-      box-shadow: -10px 0 30px rgba(0,0,0,.25);
-      display: flex;
-      flex-direction: column;
-    }
-    .sidebar.active {
-      right: 0;
-    }
-    .side-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .side-close {
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 26px;
-      cursor: pointer;
-    }
-    .side-links {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .side-links a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 12px 14px;
-      border-radius: 12px;
-      display: block;
-      transition: background .2s ease, transform .2s ease;
-    }
-    .side-links a:hover {
-      background: rgba(255,255,255,.08);
-      transform: translateX(-4px);
-    }
-    .side-cta {
-      margin-top: auto;
-      display: grid;
-      gap: 10px;
-    }
-
+    
     /* زر فتح القائمة */
     .menu-btn {
       background: none;
       border: none;
-      font-size: 22px;
+      font-size: 27px;
       cursor: pointer;
       color: #0f172a;
       margin-left: 12px;
@@ -245,6 +178,22 @@
         right: 0;
       }
     }
+
+    
+
+
+
+
+
+
+
+
+
+
+  
+
+</style>
+
   </style>
 </head>
 <body>
@@ -254,7 +203,9 @@
   <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
   <div class="brand">
-    <img src="logo.png" alt="شعار المؤسسة">
+    <a href="index.html">
+      <img src="logo.png" alt="شعار المؤسسة" >
+    </a>
   </div>
 </header>
 
@@ -263,17 +214,23 @@
   <div class="side-header">
     <div style="display:flex;align-items:center;gap:10px">
       <img src="a1.png" alt="" style="height:45px;border-radius:8px">
+      <strong></strong>
     </div>
     <button class="side-close" aria-label="إغلاق القائمة" onclick="toggleMenu()">✖</button>
   </div>
-  <nav class="side-links">
-    <a href="index.html" onclick="toggleMenu()">الرئيسية</a>
-    <a href="index.html#services" onclick="toggleMenu()">خدماتنا</a>
-    <a href="index.html#projects" onclick="toggleMenu()">مشاريعنا</a>
-    <a href="index.html#faq" onclick="toggleMenu()">الأسئلة الشائعة</a>
-    <a href="index.html#contact" onclick="toggleMenu()">تواصل معنا</a>
+   <nav class="side-links">
+<a href="index.html#hero" onclick="toggleMenu()">الرئيسية</a>
+<a href="index.html#services" onclick="toggleMenu()">خدماتنا</a>
+<a href="index.html#projects" onclick="toggleMenu()">مشاريعنا</a>
+<a href="index.html#faq" onclick="toggleMenu()">الأسئلة الشائعة</a>
+<a href="index.html#contact" onclick="toggleMenu()">تواصل معنا</a>
+
   </nav>
 </aside>
+
+ 
+
+ 
 
 <main class="container">
   <h2 class="title">المدونة</h2>
@@ -285,7 +242,7 @@
       <div class="content">
         <h3>فهم دائرة الألوان</h3>
         <p>تعرف على كيفية اختيار الألوان المتناسقة في تصميم منزلك باستخدام عجلة الألوان.</p>
-        <a href="#" class="btn">اقرأ المزيد</a>
+        
       </div>
     </article>
 
@@ -294,7 +251,7 @@
       <div class="content">
         <h3>أنواع البلاطات</h3>
         <p>مقارنة بين السيراميك والبورسلان والرخام مع المميزات والعيوب لكل نوع.</p>
-        <a href="#" class="btn">اقرأ المزيد</a>
+       
       </div>
     </article>
 
@@ -303,7 +260,7 @@
       <div class="content">
         <h3>أنواع الأعمدة في البناء</h3>
         <p>شرح مبسط للفرق بين الأعمدة الخرسانية والمعدنية واستخداماتها في المشاريع.</p>
-        <a href="#" class="btn">اقرأ المزيد</a>
+        
       </div>
     </article>
   </div>
@@ -314,12 +271,13 @@
 </footer>
 
 <script>
+  // === Sidebar ===
   function toggleMenu(){
     const el = document.getElementById('sidebar');
-    el.classList.toggle('active');
-    const isOpen = el.classList.contains('active');
-    el.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    const on = el.classList.toggle('active');
+    el.setAttribute('aria-hidden', on ? 'false' : 'true');
   }
+  
 </script>
 </body>
 </html>
